@@ -1,0 +1,5 @@
+#!/bin/bash
+# 
+BASH_TEST_OUTDIR=$(pwd)/SampleOutputDir
+BASH_TEST_OUTFILE=$BASH_TEST_OUTDIR/SampleOutputFile.xml
+

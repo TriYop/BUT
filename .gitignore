@@ -1,0 +1,6 @@
+TestResults
+
+# ignore temp files
+.*.swp
+*.tmp
+

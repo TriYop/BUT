@@ -9,7 +9,7 @@
 #   xUnit reports compatibility to bash scripts. 
 #
 # Version: 1.0.0
-# Author   Yvan JANET
+# Author   TriYop
 #==============================================================================
 
 #=== 
@@ -21,20 +21,26 @@
 
 
 # Check if current shell is bash
-if [ '/bin/bash' != "$SHELL" ]; then
-  echo "This scripts requires BASH to run, not $SHELL." >> 2
-  exit 1
-fi
+#---
+# this is not usefull and only checks if user defined shell is bash, not if running command is bash
+#if [ '/bin/bash' != "$SHELL" ]; then
+#  echo "This scripts requires BASH to run, not $SHELL." >> 2
+#  exit 1
+#fi
 
 # Load custom configuration
 [ -f /etc/bashunitrc ] && source /etc/bashunitrc
 [ -f $HOME/.bashunitrc ] && source $HOME/.bashunitrc
-if [ -z "$BASH_TEST_OUTDIR" ]; then
+if [ -z "${BASH_TEST_OUTDIR}" ]; then
   BASH_TEST_OUTDIR=$(pwd)/TestResults
-  [ ! -d $BASH_TEST_OUTDIR ] && mkdir $BASH_TEST_OUTDIR
 fi
-if [ -z "$BASH_TEST_OUTFILE" ]; then
-  BASH_TEST_OUTFILE=$BASH_TEST_OUTDIR/$(basename $0.xml)
+if [ ! -d ${BASH_TEST_OUTDIR} ]; then
+  echo "Creating output directory: ${BASH_TEST_OUTDIR}"
+  mkdir ${BASH_TEST_OUTDIR}
+fi
+
+if [ -z "${BASH_TEST_OUTFILE}" ]; then
+  BASH_TEST_OUTFILE="${BASH_TEST_OUTDIR}/$(basename $0.xml)"
 fi
 #======================================
 # Starts a new TestSuite result file.
