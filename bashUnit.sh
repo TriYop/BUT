@@ -9,7 +9,7 @@
 #   xUnit reports compatibility to bash scripts. 
 #
 # Version: 1.0.0
-# Author   Yvan JANET
+# Author   Tri Yop
 #==============================================================================
 
 #=== 
