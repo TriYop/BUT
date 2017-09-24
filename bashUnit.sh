@@ -18,16 +18,6 @@
 # - File owner group
 #
 
-
-
-# Check if current shell is bash
-#---
-# this is not usefull and only checks if user defined shell is bash, not if running command is bash
-#if [ '/bin/bash' != "$SHELL" ]; then
-#  echo "This scripts requires BASH to run, not $SHELL." >> 2
-#  exit 1
-#fi
-
 # Load custom configuration
 [ -f /etc/bashunitrc ] && source /etc/bashunitrc
 [ -f $HOME/.bashunitrc ] && source $HOME/.bashunitrc
