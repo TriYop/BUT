@@ -1,7 +1,5 @@
 #!/bin/bash
-#
 #==============================================================================
-#
 # BASH UNIT Testing library
 #------------------------------------------------------------------------------
 # Description: 
@@ -45,6 +43,7 @@ function beginTestSuite  {
   echo "<testsuite hostname='${HOSTNAME}' name='${SCRIPT_FULLNAME}' timestamp='${TIMESTAMP}'>" > $BASH_TEST_OUTFILE
   echo "<properties>" >> $BASH_TEST_OUTFILE
   for property in $PROPERTIES; do
+    # FIXME escape $property and $VALUE
     prop='${'$property'}' 
     VALUE=$( eval "echo $prop" )
     echo "<property name='${property}' value='${VALUE}'></property>" >> $BASH_TEST_OUTFILE
@@ -82,6 +81,7 @@ function exitTestSuite {
 # @param $1 Test class
 # @param $2 Test Name
 function beginTestCase {
+  # FIXME: escape $CASE and $NAME before storing them into XML
   CASE=$1
   NAME=$2
   echo "<testcase classname=\"org.bash.${CASE}\" name=\"${NAME}\">" >> $BASH_TEST_OUTFILE
@@ -101,7 +101,8 @@ function endTestCase {
 # @param $2 failure type
 # @param $3 stack trace / failure trace
 function fail {
-  msg=$( echo $1 | sed -e 's/\"/_/g' )
+  # FIXME: excape $msg, $type and $trace before storing them into XML
+  msg=$( echo $1 | sed -e 's/\"/_/g' )  
   type=$2
   trace=$3
   export lastTestError=1
