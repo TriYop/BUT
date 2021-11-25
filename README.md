@@ -1,7 +1,9 @@
 # BUT
 
 [![Build](https://github.com/TriYop/BUT/actions/workflows/build.yml/badge.svg)](https://github.com/TriYop/BUT/actions/workflows/build.yml)
-
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=TriYop_BUT&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=TriYop_BUT)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=TriYop_BUT&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=TriYop_BUT)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=TriYop_BUT&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=TriYop_BUT)
 
 ## Bash Unit Tests library
 
